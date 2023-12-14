@@ -41,6 +41,13 @@ typedef struct instruction_s
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
+
+void open_file(char *file_name);
+int parse_line(char *buffer, int line_number, int format);
+void read_file(FILE *);
+int len_chars(FILE *);
+void find_func(char *, char *, int, int);
+
 stack_t *create_node(int n);
 void free_nodes(void);
 void print_stack(stack_t **, unsigned int);
@@ -53,22 +60,20 @@ void stack_top(stack_t **, unsigned int);
 void stack_pop_top(stack_t **, unsigned int);
 void stack_nop(stack_t **, unsigned int);
 void stack_swap(stack_t **, unsigned int);
-void open_file(char *file_name);
-int parse_line(char *buffer, int line_number, int format);
-void read_file(FILE *);
-int len_chars(FILE *);
-void find_func(char *, char *, int, int);
+
 void stack_add(stack_t **, unsigned int);
 void stack_sub(stack_t **, unsigned int);
 void stack_div(stack_t **, unsigned int);
 void stack_mul(stack_t **, unsigned int);
 void stack_mod(stack_t **, unsigned int);
-void stack_error(int error_code, ...);
-void more_err(int error_code, ...);
-void stack_string_error(int error_code, ...);
-void stack_rotr(stack_t **, unsigned int)
+
 void prt_char(stack_t **, unsigned int);
 void prt_str(stack_t **, unsigned int);
 void stack_rotl(stack_t **, unsigned int);
+
+void stack_error(int error_code, ...);
+void more_err(int error_code, ...);
+void stack_string_error(int error_code, ...);
+void stack_rotr(stack_t **, unsigned int);
 
 #endif
