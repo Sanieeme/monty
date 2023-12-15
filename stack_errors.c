@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * stack_error - Prints appropiate error messages determined by their error code.
+ * stack_error - Prints appropiate error messages determined
+ * by their error code.
  * @error_code: The error codes are listed
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.

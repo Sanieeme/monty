@@ -13,7 +13,7 @@ void stack_nop(stack_t **stack, unsigned int line_number)
 
 
 /**
- *stack_ swap - Swaps the top two elements of the stack.
+ * stack_swap - Swaps the top two elements of the stack.
  * @stack: Pointer to a head stack
  * @line_number: Interger line number
  */
