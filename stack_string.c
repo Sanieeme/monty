@@ -7,25 +7,25 @@
  */
 void prt_char(stack_t **stack, unsigned int line_number)
 {
-	int line_cou;
+	int line_count;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(11, line_number);
+		stack_string_error(11, line_number);
 
-	ascii = (*stack)->n;
-	if (ascii < 0 || ascii > 127)
-		string_err(10, line_number);
-	printf("%c\n", ascii);
+	line_count = (*stack)->n;
+	if (line_count < 0 || line_count > 127)
+		stack_string_error(10, line_number);
+	printf("%c\n", line_count);
 }
 
 /**
- * print_str - Prints a string.
+ * prt_str - Prints a string.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @ln: Interger representing the line number of of the opcode.
  */
-void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
+void prt_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
-	int ascii;
+	int line_count;
 	stack_t *tmp;
 
 	if (stack == NULL || *stack == NULL)
@@ -37,21 +37,21 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 	tmp = *stack;
 	while (tmp != NULL)
 	{
-		ascii = tmp->n;
-		if (ascii <= 0 || ascii > 127)
+		line_count = tmp->n;
+		if (line_count <= 0 || line_count > 127)
 			break;
-		printf("%c", ascii);
+		printf("%c", line_count);
 		tmp = tmp->next;
 	}
 	printf("\n");
 }
 
 /**
- * rotl - Rotates the first node of the stack to the bottom.
+ * stack_rotl - Rotates the first node of the stack to the bottom.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @ln: Interger representing the line number of of the opcode.
  */
-void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
+void stack_rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
@@ -71,11 +71,11 @@ void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
 
 
 /**
- * rotr - Rotates the last node of the stack to the top.
+ * stack_rotr - Rotates the last node of the stack to the top.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @ln: Interger representing the line number of of the opcode.
  */
-void rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
+void stack_rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
